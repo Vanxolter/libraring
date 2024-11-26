@@ -3,7 +3,7 @@ libraring
 <img
   src="https://github.com/Vanxolter/libraring/blob/51df7556078e73b5daebb8fa6bb71f53fbe8fb12/libraring_logo.jpeg"
   alt="libraring"
-  width="400"
+  width="200"
 />
 
 
