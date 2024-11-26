@@ -1,9 +1,9 @@
 libraring
 ========
 <img
-  src=""
+  src="https://github.com/Vanxolter/libraring/blob/51df7556078e73b5daebb8fa6bb71f53fbe8fb12/libraring_logo.jpeg"
   alt="libraring"
-  width="500"
+  width="400"
 />
 
 
@@ -46,7 +46,7 @@ Source link: https://github.com/Vanxolter/libraring
 
 ------------------
 
-**NTCNBHJDFYBT ПРОЕКТА**
+**ТЕСТИРОВАНИЕ ПРОЕКТА**
 
  ``` pytest ```
 
