@@ -1,5 +1,10 @@
 libraring
 ========
+<img
+  src=""
+  alt="libraring"
+  width="500"
+/>
 
 
 About
@@ -32,7 +37,17 @@ Source link: https://github.com/Vanxolter/libraring
 
 1) Клонируем репозиторий: ``` git clone git@github.com:Vanxolter/libraring.git ```
 
-2) Создаем виртуальное окружение: ``` virtualenv -p python3 --prompt=rms- venv/ ```
+2) Создаем виртуальное окружение: ``` virtualenv -p python3 --prompt=lib- venv/ ```
 
-3) Запускаем приложение : ``` python3 app.py ```
+3) Устанавливаем необходимые библиотеки (pytest): ``` pip install -r requirements.txt ```
+
+4) Запускаем приложение : ``` python3 app.py ```
+
+
+------------------
+
+**NTCNBHJDFYBT ПРОЕКТА**
+
+ ``` pytest ```
+
 

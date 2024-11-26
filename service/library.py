@@ -1,6 +1,7 @@
 import json
 from service.book import Book
 from utils.decorators import save_after_action, handle_exceptions
+from utils.validators import validate_title, validate_author, validate_year
 
 
 class Library:
@@ -40,7 +41,7 @@ class Library:
         self._next_id = self.books[-1].book_id + 1 if len(self.books) > 0 else 1
 
     @save_after_action
-    def add_book(self, title: str, author: str, year: int) -> Book:
+    def add_book(self, title: str, author: str, year: int, validated: int = 0) -> Book:
         """
         Добавляет книгу в библиотеку или увеличивает её количество, если книга уже существует.
 
@@ -54,7 +55,7 @@ class Library:
         """
         book_exists = self.find_books(title, author, year)
         if not book_exists:
-            new_id = self._generate_id()
+            new_id: int = self._generate_id()
             book = Book(book_id=new_id, title=title, author=author, year=year)
             self.books.append(book)
         else:
@@ -109,8 +110,8 @@ class Library:
 
         def matches_criteria(book):
             return (
-                    (not title or title.lower() in book.title.lower()) and
-                    (not author or author.lower() in book.author.lower()) and
+                    (not title or (title.lower() in book.title.lower() and len(title) == len(book.title))) and
+                    (not author or (author.lower() in book.author.lower() and len(author) == len(book.author))) and
                     (not year or book.year == year)
             )
 
@@ -166,15 +167,16 @@ class Library:
         book.status = "в наличии"
         return True
 
-    def display_books(self) -> None:
+    def display_books(self) -> bool:
         """
         Выводит список всех книг в библиотеке.
         """
         if not self.books:
             print("Библиотека пуста.")
-            return
+            return False
         for book in self.books:
             print(book)
+        return True
 
     @handle_exceptions
     def load_books(self) -> None:
